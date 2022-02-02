@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <h3 class="title">Listado de tarjetas
+            <div *ngIf="loading" class="spinner-border text-secondary float-end" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </h3>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let card of cardsList">
+                    <td>{{ card.owner }}</td>
+                    <td>{{ card.cardNumber }}</td>
+                    <td>{{ card.expiredDate }}</td>
+                    <td><i (click)="editCard(card)" class="far fa-edit text-info icon"></i></td>
+                    <td><i (click)="deleteCard(card.id)" class="far fa-trash-alt text-danger icon"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
